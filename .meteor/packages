@@ -1,0 +1,35 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-base             # Packages every Meteor app needs to have
+mobile-experience       # Packages for a great mobile UX
+mongo                   # The database Meteor supports right now
+session                 # Client-side reactive dictionary for your app
+jquery                  # Helpful client-side library
+tracker                 # Meteor's client-side reactive programming library
+
+es5-shim                # ECMAScript 5 compatibility for older browsers.
+
+angular
+angularui:angular-ui-router
+accounts-password
+cfs:filesystem
+cfs:standard-packages
+cfs:ui
+u2622:persistent-session
+msavin:mongol
+brettle:accounts-anonymous
+brettle:accounts-anonymous-auto
+brettle:accounts-logout-to-switch
+brettle:accounts-patch-ui
+brettle:accounts-deluxe
+angular:angular-material
+jagi:astronomy
+standard-minifier-js
+standard-minifiers
+pbastowski:angular-babel@1.3.1
+meteorhacks:fast-render
+brettle:accounts-login-state

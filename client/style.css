@@ -1,0 +1,220 @@
+a {
+    color:rgb(103,58,183);
+    cursor:pointer;
+}
+a:hover {
+    color: rgb(80, 44, 144);
+}
+
+div.section
+{
+}
+.sort-link{
+    color: black;
+
+}
+.sort-link>i{
+    vertical-align: middle;
+    margin-left: -8px;
+
+}
+
+
+
+.popup a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+.popup a:hover
+{
+    color: #141414;
+    text-decoration:none;
+    cursor:pointer;
+}
+.card-media {
+    position:relative;
+    top:10px;
+    right:10px;
+    float:right;
+}
+/*div.section div:nth-of-type(even)*/
+/*{*/
+/*background-color: #ffffff;*/
+/*}*/
+/*div.section div:nth-of-type(odd)*/
+/*{*/
+    /*background-color: #f6f6f6;*/
+/*}*/
+div.section  p {
+    font-size: 20px;
+}
+ul{
+    padding:0px !important;
+}
+
+
+.aspect-ui {
+    padding-left: 60px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 256px; /* account for borders */
+    width: 0px;
+
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.sel-list {
+
+    width: 100px;
+
+}
+.search-button{
+    margin-top:15px !important;
+    height:45px !important;
+}
+
+.aspect-selected li{
+    display:inline-block;
+    flex-direction: row-reverse;
+    width:50px;
+    height:90px;
+    overflow: hidden;
+}
+.aspect-list li {
+    background-size:cover;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    list-style: none;
+    width: 45px;
+    height: 45px;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    line-height: 80px;
+    border: 1px solid white;
+}
+
+.popup {
+
+    position:absolute;
+    background-color:#FFFFFF;
+    border:1px solid #000000;
+    padding:10px;
+    z-index: 10;
+}
+
+.drop-box {
+    background: #F8F8F8;
+    border: 5px dashed #DDD;
+    width: 200px;
+    height: 65px;
+    text-align: center;
+    padding-top: 25px;
+    margin: 10px;
+}
+.dragover {
+    border: 5px dashed blue;
+}
+
+.dialogdemoBasicUsage #popupContainer {
+    position: relative; }
+.dialogdemoBasicUsage .footer {
+    width: 100%;
+    text-align: center;
+    margin-left: 20px; }
+.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+    font-size: 0.8em;
+    margin-top: 50px; }
+
+.subscribed{
+    background-color: #6922d5 !important;
+}
+.unsubscribed{
+
+}
+.missing-parent{
+    border: 3px solid RED !important;
+}
+.landing{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height:100%;
+    background-size: cover;
+    background-position: 50% 20%;
+    background-image: url('http://orig12.deviantart.net/d7ba/f/2015/154/f/d/minecraft__sad_night_by_reynaruina-d8vufrw.png')
+}
+
+.chat-widget{
+    border-top: solid;
+    border-left: solid;
+    border-width: 3px;
+    border-top-left-radius:16px;
+    overflow: hidden;
+    border-color:rgb(103,58,183);
+    resize: both;
+
+
+}
+
+  .chat-widget-input{
+
+    z-index:100;
+    width:70% !important;
+    margin-top: 0px !important;
+    margin-bottom:-20px !important;
+}
+@font-face {
+    font-family: thaumcraftFont;
+    src: url('/fonts/thaumcraft.ttf');
+}
+.title-tcss{
+    font-size:45px;
+    font-family: thaumcraftFont;
+
+}
+.editor-warning{
+    font-style: italic;
+    margin:10px;
+    color:red;
+
+}
+.layout-centered{
+    margin:0 auto;
+}
+.aspect-banned{
+    background-color:red;
+}
+
+
+.autocomplete-aspect-list li {
+    vertical-align:middle;
+
+    border-bottom: 1px solid #ccc;
+    height: 50px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    white-space: normal; }
+
+.autocomplete-aspect-list img{
+    vertical-align:middle;
+}
+.autocomplete-aspect-list span{
+    vertical-align:middle;
+}
+
+.autocomplete-aspect-list li:last-child {
+    border-bottom-width: 0; }
+.autocomplete-aspect-list .item-title,
+.autocomplete-aspect-list .item-metadata {
+    display: block;
+    line-height: 2; }
+.autocomplete-aspect-list .item-title md-icon {
+    height: 18px;
+    width: 18px; }

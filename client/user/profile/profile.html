@@ -1,0 +1,107 @@
+<div class="flexbox-parent" layout="row" flex="100">
+    <div layout="row" layout-align="center center" flex="100" style="min-height: 500px">
+
+        <div flex="30" layout="column" class="layout-centered" layout-fill layout-margin layout-padding>
+
+            <div layout="row" layout-wrap layout-fill layout-margin>
+                <div flex="100">
+                    <p class="md-body-2"> Avatar:</p>
+                    <img src="{{profile.user.profile.avatar }}">
+                </div>
+
+                <div flex="100">
+                <form name="myForm">
+
+
+                        <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb">
+
+                        <div ngf-drop ngf-select
+                             ngf-dimensions
+                             ngf-resize="{width: 100, height: 100}"
+                             name="file2"
+                             ng-model="picFile"
+                             ngf-change="alert('dupa')"
+                             ngf-max-size="500KB"
+                             required
+                             ngf-drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}"
+                             class="drop-box testclick"
+                             ngf-multiple="false" ngf-allow-dir="true"
+                             accept="'image/*'"
+                             ngf-pattern="'image/*'"
+                             ngf-drop-available="dropAvailable">
+
+                            <div ng-show="dropAvailable">Click or drop image to here </div>
+                        </div>
+
+                        <i ng-show="myForm.file2.$error.maxSize">File too large, max 500KB</i>
+                        <br>
+                        <md-button flex="auto" ng-click="picFile = null" ng-show="picFile" class="md-primary md-raised">
+                            Remove
+                        </md-button>
+
+                        <md-button ng-disabled="!picFile"
+                                   ng-click="profile.addAvatar(); picFile = null " class="md-primary md-raised">Upload
+                        </md-button>
+      <span class="progress" ng-show="picFile.progress >= 0">
+        <div style="width:{{picFile.progress}}%"
+             ng-bind="picFile.progress + '%'"></div>
+      </span>
+                        <span ng-show="picFile.result">Upload Successful</span>
+                        <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+
+                </form>
+            </div>
+
+            </div>
+            <div layout="row" layout-fill layout-margin>
+                <p class="md-body-2"> Enter old password in order to edit username or password</p>
+            </div>
+
+            <form name="loginForm" layout="column" layout-fill layout-padding layout-margin>
+                <md-input-container>
+                    <label>Old Password </label>
+                    <input type="password" name="oldPassword" ng-model="profile.credentials.oldPassword"
+                           aria-label="password" required/>
+
+                    <div ng-messages="loginForm.oldPassword.$error" ng-show="loginForm.oldPassword.$dirty">
+                        <div ng-message="required">This is required!</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container>
+                    <label> Username </label>
+                    <input ng-disabled="!loginForm.oldPassword.$dirty" type="text"
+                           ng-model="profile.credentials.username" aria-label="email"/>
+
+                </md-input-container>
+
+                <md-input-container style="margin-top:-25px;">
+                    <label>New Password </label>
+                    <input name="password" ng-disabled="!loginForm.oldPassword.$dirty" type="password"
+                           ng-model="profile.credentials.password" aria-label="password"/>
+                </md-input-container>
+                <md-input-container style="margin-top:-25px;">
+                    <label> Password repeat</label>
+                    <input name="password2" ng-disabled="!loginForm.oldPassword.$dirty" type="password"
+                           ng-model="profile.credentials.password2" aria-label="password repeat"/>
+                </md-input-container>
+                <div layout="row" layout-align="center">
+                    <md-button class="md-raised md-primary" ng-click="profile.update()" aria-label="login"
+                               ng-disabled="loginForm.$invalid || profile.credentials.password != profile.credentials.password2">
+                        Update
+                    </md-button>
+
+                </div>
+            </form>
+            <md-toolbar ng-show="profile.error" class="md-warn" layout="row" layout-fill layout-padding layout-margin>
+                <p class="md-body-1">{{ profile.error }}</p>
+            </md-toolbar>
+
+
+        </div>
+
+    </div>
+</div>
+
+
+

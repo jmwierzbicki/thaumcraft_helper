@@ -1,0 +1,69 @@
+<div flex="100">
+    <div style="position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 10px;">
+        <md-progress-linear ng-if="collectionReady" md-mode="indeterminate"></md-progress-linear>
+    </div>
+    <md-input-container style="width:100%">
+
+        <label>Search list by name or description</label>
+        <input type="search" ng-model="search" >
+    </md-input-container>
+
+    <div layout-wrap flex="100" layout="row" layout-align="center">
+        <div  style=" " ng-repeat="int in pagesCount track by $index">
+            <md-button style="min-width: 1%; width:30px; margin:0px;padding:0px;"  class="  md-primary md-raised" ng-click="pageChanged($index+1)"  data-ng-disabled="page == $index+1" >{{$index+1}}</md-button>
+        </div>
+</div>
+
+<br>
+<div class="section"  >
+
+    <md-content>
+        <div layout="row" layout-wrap>
+            <div flex-sm="50" flex-md="33" flex-gt-md   ="25" ng-repeat="list in aspectList">
+                <md-card >
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">{{list.name}}</span><br>
+                            <span class="md-subhead">{{list.description | limitTo:30 }}</span>
+                        </md-card-title-text>
+                        <md-card-title-media>
+                         <div class="md-media-sm card-media" style="overflow:hidden; width:110px; height: 110px">
+                             {{list.ownerName}}
+                             <img style="width:100px;" ng-src="{{list.image}}"></div>
+                        </md-card-title-media>
+                    </md-card-title>
+                    subscribers: {{list.subscriptions}}
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button class="md-raised" ng-click="go('/editor/'+list._id)">View</md-button>
+                        <md-button class="md-raised" ng-class="subsArr.indexOf(list._id) != -1 ? 'md-primary':'unsubscribed'  " ng-click="sub(list._id)">Subscribe</md-button>
+                       </md-card-actions>
+                </md-card>
+            </div>
+        </div>
+
+
+    </md-content>
+
+    <div ng-if="$root.isLogged()">
+
+
+    <h2>Add your own version:</h2>
+    <div>
+        <form >
+            <md-input-container>
+                <label>Name</label>
+                <input ng-model="newList.name">
+            </md-input-container>
+
+
+            <md-button  class="  md-primary md-raised" ng-click="newList.owner=$root.currentUser._id; addList(newList); newList='';">Add</md-button>
+
+        </form>
+    </div>
+</div>
+</div>
+
+</div>

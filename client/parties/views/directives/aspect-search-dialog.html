@@ -1,0 +1,36 @@
+<md-dialog style="min-width:600px;" aria-label="seach aspect patch"  ng-cloak>
+
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Found: {{locals.parent.searchCount}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="hide()">
+                    <i class="material-icons">close</i>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <h3>Results:</h3>
+                <div ng-show="!locals.parent.searchDisabled && locals.parent.searchResult.length == 0">
+                There is no results - You can try to increase depth, or remove aspect from banned list.
+                </div>
+                <div ng-repeat="row in locals.parent.searchResult">
+                    <img ng-repeat="aspect in row track by $index" alt="{{aspect.name}}" ng-src="{{aspect.imageUrl}}">
+
+                </div>
+
+
+            </div>
+        </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+
+        <span flex></span>
+
+        <md-button ng-click="hide();" style="margin-right:20px;">
+            ok.
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

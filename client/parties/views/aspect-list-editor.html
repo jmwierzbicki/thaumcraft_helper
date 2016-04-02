@@ -1,0 +1,141 @@
+<div flex="50">
+    <div ng-hide="isOwner()" class="editor-warning">You are not owner of this list - only export option is available</div>
+
+<h5 ng-if="isOwner()">You can edit aspect list there. Make sure that You save changes when You are done. Good luck!</h5> {{ partyId }}
+
+    <div ng-if="isOwner()">
+    <ul class="aspect-ui aspect-list" >
+        <li style="background-image: url('{{aspect.imageUrl}}');"
+            ng-repeat="aspect in list.aspectObs track by aspect.id"
+            aspect-uploader="{{aspect}}"
+            aspect-index="{{$index}}"
+            ng-class="{'missing-parent': !checkForParents(aspect)}"
+            >
+            {{aspect.name}}
+
+        </li>
+    </ul>
+    </div>
+
+    <div ng-if="!isOwner()">
+        <ul class="aspect-ui aspect-list" >
+            <li style="background-image: url('{{aspect.imageUrl}}');"
+                ng-repeat="aspect in list.aspectObs track by aspect.id"
+
+
+                ng-class="{'missing-parent': !checkForParents(aspect)}"
+            >
+                {{aspect.name}}
+
+            </li>
+        </ul>
+    </div>
+
+
+<br>
+    <md-button class="md-primary md-raised" ng-click="showAdvanced($event)" flex-sm="100" flex-md="100" flex-gt-md="auto">
+        Import/Export
+    </md-button>
+    <a ui-sref="editor-list"><md-button class="md-primary md-raised" > Back to list </md-button></a>
+<md-button ng-if="isOwner()" class="md-primary md-raised" ng-click="remove($event)">delete</md-button>
+
+
+
+
+</div>
+<div flex="50" >
+    <section ng-if="isOwner()">
+    <div layout layout-wrap>
+
+        <md-button class="md-primary md-raised" ng-disabled="isChanged() || validateList()==false  " ng-if="isOwner()" flex="40" ng-click="save()">Save</md-button>
+        <md-button ng-if="isOwner()" flex="40" ng-click="reset()">cancel</md-button>
+        <div flex></div>
+
+
+
+    <md-input-container flex="30">
+        <label>Name for list</label>
+        <input ng-model="list.name">
+    </md-input-container>
+
+    <md-input-container flex>
+        <label>description</label>
+        <input ng-model="list.description">
+    </md-input-container>
+    </div>
+
+        <md-checkbox aria-label="Public" type="checkbox" ng-model="list.status">
+            Public</md-checkbox>
+<h4>New Aspect:</h4>
+        <form name="newAspectForm">
+    <div layout="row" style="height:60px;" layout-wrap>
+            <div flex="30">
+            <md-input-container>
+            <label>Name</label>
+            <input name="name" required ng-model="newAspect.name" ng-change=" newAspect.name=convertToLower(newAspect.name) ">
+                <div ng-messages="newAspectForm.name.$error" ng-show="newAspectForm.name.$dirty">
+                    <div ng-message="required">This is required!</div></div>
+            </md-input-container>
+            </div>
+            <div flex="70" layout="row">
+
+                <md-autocomplete flex="50"
+                        md-floating-label="Compound 1"
+
+                        md-selected-item="newAspect.Compoment1"
+                        md-selected-item-change="SetC1(aspect.name)"
+                        md-search-text-change="SetC1(ctrl.searchText)"
+
+                        md-search-text="ctrl.searchText"
+
+                        md-items="aspect in querySearch(ctrl.searchText)"
+                        md-item-text="aspect.name"
+                        md-min-length="0"
+
+                        md-menu-class="autocomplete-aspect-list">
+                    <md-item-template>
+           <img width="50" src="{{aspect.imageUrl}}"><span style="margin:10px">{{aspect.name}}</span>
+                    </md-item-template>
+                </md-autocomplete>
+                <md-autocomplete flex="50"
+                        md-floating-label="Compound 2"
+
+                        md-selected-item="newAspect.Compoment2"
+                        md-selected-item-change="SetC2(aspect.name)"
+                        md-search-text-change="SetC2(ctrl.searchText2)"
+
+                        md-search-text="ctrl.searchText2"
+
+                        md-items="aspect in querySearch(ctrl.searchText2)"
+                        md-item-text="aspect.name"
+                        md-min-length="0"
+
+                        md-menu-class="autocomplete-aspect-list">
+                    <md-item-template>
+          <img height="100%" src="{{aspect.imageUrl}}"> {{aspect.name}}
+                    </md-item-template>
+                </md-autocomplete>
+
+                </div>
+
+
+
+            <md-button flex="100" ng-disabled="newAspectForm.$invalid"
+                       class="md-primary md-raised"
+                       ng-click="createNewAspect(newAspect, $index); newAspect.name=''; ctrl.searchText2=''; ctrl.searchText='';
+                       ">
+                Add
+            </md-button>
+    </div>
+        </form>
+
+    </section>
+    <section ng-if="!isOwner()">
+        <h1>{{list.name}}</h1>
+        <p>{{list.description}}</p>
+    </section>
+
+
+
+
+</div>

@@ -1,0 +1,58 @@
+<div class='popup'>
+    {{selectedAspect.name}} =
+    {{selectedAspect.Compoment1}} +
+    {{selectedAspect.Compoment2}}<br>
+    Tier: {{selectedAspect.Tier}}<br>
+    <a ng-href="" ng-click="del($index)"><md-button>delete Aspect</md-button></a>
+    <a ng-href="" ng-click="closePopup()"> <md-button>CLOSE</md-button></a>
+    <div>
+        <form name="myForm">
+            <fieldset>
+                <legend>Upload new aspect icon </legend>
+
+                <br> <md-button ngf-select="myForm.file2 = myForm.file1"
+                                ngf-resize="{width: 50, height: 50}"
+
+                                required
+                                ngf-multiple="false" ngf-allow-dir="true"
+                                accept="'image/*'"
+                                ngf-pattern="'image/*'"
+                                name="file1" ng-model="picFile" class="md-primary md-raised" >Select image</md-button>
+                <img ng-show="myForm.file.$valid" ngf-thumbnail="picFile" class="thumb">
+                <div ngf-drop  ngf-select
+                     ngf-dimensions
+                     ngf-resize="{width: 50, height: 50}"
+                     name="file2"
+                     ng-model="picFile"
+                     ngf-change="alert('dupa')"
+
+                     required
+                     ngf-drag-over-class="{accept:'dragover', reject:'dragover-err', delay:100}" class="drop-box testclick"
+                     ngf-multiple="false" ngf-allow-dir="true"
+                     accept="'image/*'"
+                     ngf-pattern="'image/*'"
+                     ngf-drop-available="dropAvailable">
+
+                    <div ng-show="dropAvailable">or You can drop image to here</div>
+                </div>
+
+                <i ng-show="myForm.file2.$error.maxSize">File too large, max 10KB</i>
+            <br>
+                <md-button flex="auto" ng-click="picFile = null" ng-show="picFile" class="md-primary md-raised" >Remove</md-button>
+
+                <md-button ng-disabled="!picFile"
+                        ng-click="addImages(); picFile = null " class="md-primary md-raised" >Upload</md-button>
+      <span class="progress" ng-show="picFile.progress >= 0">
+        <div style="width:{{picFile.progress}}%"
+             ng-bind="picFile.progress + '%'"></div>
+      </span>
+                <span ng-show="picFile.result">Upload Successful</span>
+                <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+            </fieldset>
+            <br>
+        </form>
+    </div>
+
+
+</div>
+

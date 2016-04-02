@@ -1,0 +1,38 @@
+<md-dialog aria-label="Mango (Fruit)"  ng-cloak>
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Importer</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon aria-label="Close dialog"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <h3>Import list:</h3>
+                <p>
+                Following form is used to import Your custom made list in windows TCSS application, You can also copy or share this list by exporting it, and pasting it there. </p>
+                <br> format: name,compound1,compound2
+                <md-input-container class="md-block">
+                    <label>paste csv data there</label>
+                    <textarea ng-model="locals.list.aspectList"></textarea>
+                </md-input-container>
+
+            </div>
+        </md-dialog-content>
+
+    </form>
+    <md-dialog-actions layout="row">
+
+        <span flex></span>
+        <md-button ng-if="locals.parent.isOwner()" ng-click="locals.parent.validate(); hide();">
+            Import
+        </md-button>
+        <md-button ng-click="hide();" style="margin-right:20px;">
+            Cancel
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>
