@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="961bb8c1-096e-446f-ac6f-ecbf432217bd" name="debian" url="http://192.168.1.108">
+        <fileTransfer host="192.168.1.108" port="21" rootFolder="/root/tcss2" password="dfdbdfcbdfd0dfd0dfcbdfdb" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
