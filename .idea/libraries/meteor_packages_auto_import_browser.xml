@@ -57,9 +57,6 @@
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/modules/0.6.1/web.browser/process.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/modules/0.6.1/web.browser/install-packages.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/lai_collection-extensions/0.1.4/web.browser/packages/lai_collection-extensions.js" />
-        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/angular_angular-animate/1.4.8/web.browser/angular-animate.js" />
-        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/angular_angular-aria/1.4.8/web.browser/angular-aria.js" />
-        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/angular_angular/1.4.8/web.browser/angular.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/meteorhacks_fast-render/2.14.0/web.browser/lib/client/id_tools.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/meteorhacks_fast-render/2.14.0/web.browser/lib/client/ddp_update.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/meteorhacks_fast-render/2.14.0/web.browser/lib/client/boot.js" />
@@ -239,6 +236,9 @@
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/accounts-base/1.2.7/web.browser/server_tests.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/accounts-base/1.2.7/web.browser/server_main.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/accounts-base/1.2.7/web.browser/client_main.js" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/angular_angular-aria/1.5.3_1/web.browser/angular-aria.js" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/angular_angular-animate/1.5.3_1/web.browser/angular-animate.js" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/angular_angular/1.5.3_1/web.browser/angular.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/jagi_astronomy/1.2.10/web.browser/lib/modules/core/events.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/jagi_astronomy/1.2.10/web.browser/lib/modules/core/classes.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/jagi_astronomy/1.2.10/web.browser/lib/modules/core/base_class.js" />
@@ -348,9 +348,6 @@
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/modules/0.6.1/web.browser/process.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/modules/0.6.1/web.browser/install-packages.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/lai_collection-extensions/0.1.4/web.browser/packages/lai_collection-extensions.js" />
-      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/angular_angular-animate/1.4.8/web.browser/angular-animate.js" />
-      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/angular_angular-aria/1.4.8/web.browser/angular-aria.js" />
-      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/angular_angular/1.4.8/web.browser/angular.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/meteorhacks_fast-render/2.14.0/web.browser/lib/client/id_tools.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/meteorhacks_fast-render/2.14.0/web.browser/lib/client/ddp_update.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/meteorhacks_fast-render/2.14.0/web.browser/lib/client/boot.js" />
@@ -530,6 +527,9 @@
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/accounts-base/1.2.7/web.browser/server_tests.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/accounts-base/1.2.7/web.browser/server_main.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/accounts-base/1.2.7/web.browser/client_main.js" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/angular_angular-aria/1.5.3_1/web.browser/angular-aria.js" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/angular_angular-animate/1.5.3_1/web.browser/angular-animate.js" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/angular_angular/1.5.3_1/web.browser/angular.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/jagi_astronomy/1.2.10/web.browser/lib/modules/core/events.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/jagi_astronomy/1.2.10/web.browser/lib/modules/core/classes.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/jagi_astronomy/1.2.10/web.browser/lib/modules/core/base_class.js" />

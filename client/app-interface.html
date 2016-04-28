@@ -1,0 +1,23 @@
+<div layout="column">
+<md-toolbar flex="10" >
+        <div class="md-toolbar-tools">
+            <img src="img/thaumcraft_mirror.png" style="width:110px;">
+            <!--<span class="title-tcss">TCSS</span>-->
+            <md-button ui-sref="solver">Helper</md-button>
+            <md-button href="/editor-list">Version List</md-button>
+            <md-button href="/help">Help</md-button>
+            <!-- fill up the space between left and right area -->
+            <span flex></span>
+            <md-button ng-href="/profile" ng-show="$root.isLogged()">profile</md-button>
+            <md-button ng-href="/login" ng-hide="$root.isLogged()">Login</md-button>
+            <md-button ng-href="/register" ng-hide="$root.isLogged()">Sign up</md-button>
+
+            <md-button ng-href="/logout" ng-show="$root.isLogged()">Logout</md-button>
+        </div>
+    </md-toolbar>
+
+    <div flex="90" layout="row" layout-align="center"  >
+
+        <div flex="90" ui-view  flex-gt-sm layout-gt-sm="row"></div>
+    </div>
+</div>

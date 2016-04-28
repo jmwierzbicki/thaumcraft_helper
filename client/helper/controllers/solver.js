@@ -19,7 +19,7 @@ angular.module("tcssApp").controller("SolverCtrl", function ($scope, $rootScope 
             return obj.name == name;
         });
         result = filtered[0];
-        console.log(result);
+       // console.log(result);
         return result;
     };
 

@@ -18,6 +18,11 @@ tcssApp = angular.module('tcssApp',[
 });
 
 
+angular.module('tcssApp').component('app', {
+    templateUrl: 'client/app-interface.html'
+});
+
+
 
 tcssApp.run(function ($rootScope, $state) {
 
