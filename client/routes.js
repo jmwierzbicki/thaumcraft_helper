@@ -14,17 +14,17 @@ angular.module("tcssApp").config(function ($urlRouterProvider, $stateProvider, $
   $stateProvider
       .state('solver', {
           url: '/',
-          templateUrl: 'client/parties/views/solver.html',
+          templateUrl: 'client/helper/views/solver.html',
           controller: 'SolverCtrl'
       })
     .state('editor-list', {
           url: '/editor-list',
-      templateUrl: 'client/parties/views/bundle-list.html',
+      templateUrl: 'client/helper/views/bundle-list.html',
       controller: 'BundleListCtrl'
     })
     .state('editor', {
       url: '/editor/:listId',
-      templateUrl: 'client/parties/views/aspect-list-editor.html',
+      templateUrl: 'client/helper/views/aspect-list-editor.html',
       controller: 'EditorCtrl',
       resolve: {
         "currentUser": function ($meteor) {
@@ -34,7 +34,7 @@ angular.module("tcssApp").config(function ($urlRouterProvider, $stateProvider, $
     })
       .state('help', {
           url: '/help',
-          templateUrl: 'client/parties/views/help.html',
+          templateUrl: 'client/helper/views/help.html',
           controller: 'HelpCtrl'
       })
       .state('login', {

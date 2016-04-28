@@ -13,7 +13,13 @@
     <!--</select>-->
 
 <ul class="aspect-list aspect-ui ">
-    <li ng-class="{'aspect-banned': isBanned(aspect.name)}"  popup-launcher="{{aspect.name}}" style="background-image: url('{{aspect.imageUrl}}');" ng-repeat="aspect in list.aspectObs track by aspect.id">{{aspect.name}}</li>
+    <li class="tooltip-aspects" ng-class="{'aspect-banned': isBanned(aspect.name)}"  popup-launcher="{{aspect.name}}" style="background-image: url('{{aspect.imageUrl}}');" ng-repeat="aspect in list.aspectObs track by aspect.id">{{aspect.name}}
+    <span ng-if="aspect.Compoment1 != 'null'">
+        <img src="{{getAspectOb(aspect.Compoment1).imageUrl}}">
+        +
+        <img src="{{getAspectOb(aspect.Compoment2).imageUrl}}">
+    </span>
+    </li>
 </ul>
 
 

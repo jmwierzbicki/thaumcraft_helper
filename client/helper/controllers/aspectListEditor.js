@@ -58,7 +58,7 @@ angular.module("tcssApp").controller("EditorCtrl", function ($scope, $stateParam
                     };
                 },
                 controllerAs: 'ctrl',
-                templateUrl: 'client/parties/views/directives/aspect-list-editor-import.html',
+                templateUrl: 'client/helper/views/directives/aspect-list-editor-import.html',
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 clickOutsideToClose: true,
@@ -318,11 +318,11 @@ function assignTiers(array, i) {
 .
 directive("aspectUploader", function ($rootScope, $compile, $templateRequest) {
     return {
-        // templateUrl: 'client/parties/views/directives/aspect-uploader-directive.ng.html',
+        // templateUrl: 'client/helper/views/directives/aspect-uploader-directive.ng.html',
         restrict: 'A',
         link: function (scope, element, attrs) {
             template = '';
-            $templateRequest('client/parties/views/directives/aspect-uploader-directive.html')
+            $templateRequest('client/helper/views/directives/aspect-uploader-directive.html')
                 .then(function (string) {
                     template = string;
                 });

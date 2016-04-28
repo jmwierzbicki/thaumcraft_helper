@@ -13,6 +13,16 @@ angular.module("tcssApp").controller("SolverCtrl", function ($scope, $rootScope 
     }, {});
     //$scope.aspectList = $scope.$meteorCollection(AspectList);
     //$scope.aspectLists = $scope.$meteorCollection(AspectLists);
+
+    $scope.getAspectOb = function (name) {
+        var filtered = $scope.list.aspectObs.filter(function (obj) {
+            return obj.name == name;
+        });
+        result = filtered[0];
+        console.log(result);
+        return result;
+    };
+
     $scope.changeVer = function () {
         $scope.aspect1 = new Aspect('...', 'null', 'null', $scope);
         $scope.aspect2 = new Aspect('...', 'null', 'null', $scope);
@@ -250,7 +260,7 @@ var handle;
 
                 },
                 controllerAs: 'ctrl',
-                templateUrl: 'client/parties/views/directives/aspect-search-dialog.html',
+                templateUrl: 'client/helper/views/directives/aspect-search-dialog.html',
                 parent: angular.element(document.body),
                 targetEvent: ev,
                 clickOutsideToClose: true,
